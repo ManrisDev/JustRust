@@ -11,6 +11,7 @@ public class ChoiceTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             ChoicePanel.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }
