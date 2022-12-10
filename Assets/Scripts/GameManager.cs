@@ -50,18 +50,23 @@ public class GameManager : MonoBehaviour
 
     public void RebirthOrDie()
     {
+        Debug.Log("RebirthOrDie");
         diePanel.SetActive(true);
         movement.enabled = false;
     }
 
-    public void EndGame() {
-        diePanelAnimator.SetBool("beReborn", false);
-        FindObjectOfType<Player>().Die();
+    public void Rebirth() {
+        Debug.Log("Rebirth");
+        movement.enabled = true;
+        GlobalVar.Set_lives(50);
+        diePanel.SetActive(false);
     }
 
-    public void Rebirth() {
-        diePanelAnimator.SetBool("beReborn", true);
-        GlobalVar.Set_lives(50);
+    public void EndGame() {
+        Debug.Log("EndGame");
+        diePanel.SetActive(true);
+        diePanelAnimator.SetTrigger("die");
+        FindObjectOfType<Player>().Die();
     }
 
     public void LoadLastCutScene()

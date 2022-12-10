@@ -7,8 +7,6 @@ public class Player : Entity
     [SerializeField] private float runSpeed = 8f;
     [SerializeField] private float jumpForce = 15f; //Jump power
 
-    [SerializeField] private float colliderArea = 0.51f;
-
     private new Rigidbody2D rigidbody;
     private Animator animator;
 
@@ -29,11 +27,6 @@ public class Player : Entity
         lives = 100;
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-    private void FixedUpdate()
-    {
-        CheckGround();
     }
 
     private void Update()
@@ -57,12 +50,17 @@ public class Player : Entity
             Jump();
     }
 
-    private void CheckGround()
-    {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, colliderArea);
-        isGrounded = collider.Length > 1;
+    private void OnCollisionEnter2D (Collision2D collision) {
+        if (collision.gameObject.tag == "Ground") {
+            isGrounded = true;
+        }
+    }
 
-        if (!isGrounded) State = States.jump;
+    private void OnCollisionExit2D (Collision2D collision) {
+        if (collision.gameObject.tag == "Ground") {
+            State = States.jump;
+            isGrounded = false;
+        }
     }
 
     private void Walk()

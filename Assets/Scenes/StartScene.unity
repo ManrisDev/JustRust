@@ -5824,7 +5824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &878384320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15883,13 +15883,14 @@ GameObject:
   - component: {fileID: 1769533202}
   - component: {fileID: 1769533201}
   - component: {fileID: 1769533200}
+  - component: {fileID: 1769533203}
   m_Layer: 5
   m_Name: DiePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1769533199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15945,7 +15946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15970,6 +15971,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769533198}
   m_CullTransparentMesh: 1
+--- !u!114 &1769533203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769533198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d4672613be0e64889e21a62ce3e2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809134928
 GameObject:
   m_ObjectHideFlags: 0
@@ -16246,6 +16259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1972232335}
+  - component: {fileID: 1972232336}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -16268,6 +16282,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972232336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972232334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cb9d03c1f10784696a66faa28a2aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diePanel: {fileID: 1769533198}
+  diePanelAnimator: {fileID: 1769533200}
+  player: {fileID: 227485150}
+  movement: {fileID: 227485155}
 --- !u!1 &2045349749
 GameObject:
   m_ObjectHideFlags: 0
