@@ -5094,7 +5094,6 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 8
   jumpForce: 15
-  colliderArea: 0.51
 --- !u!95 &227485156
 Animator:
   serializedVersion: 4
@@ -15996,7 +15995,7 @@ GameObject:
   - component: {fileID: 1809134929}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2,27 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Player")]
-   // [SerializeField] private Hero movement;//
+    //[SerializeField] private Hero movement;//
     [SerializeField] private Animator playerAnimator;
 
     [Header("Dialogue")]
-    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private AudioSource dialogueAudio;
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Image dialogueIcon;
     [SerializeField] private Animator dialogueAnimator;
-    [SerializeField] private Queue<Sprite> dialogueSprite;
-    [SerializeField] private GameObject anekdotAudioSource;
 
     [Header("Game Manager")]
-   // [SerializeField] private GameManager gameManager;//
+    [SerializeField] private GameManager gameManager;
 
     private Queue<string> Sentences;
-    private Queue<string> Name;
+    private Queue<AudioSource> Audio;
     private bool pause = false;
     private bool dialog = false;
 
@@ -35,33 +33,26 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         Sentences = new Queue<string>();
-        Name = new Queue<string>();
-        dialogueSprite = new Queue<Sprite>();
+        Audio = new Queue<AudioSource>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         dialogueAnimator.SetBool("IsOpen", true);
         State = States.idle;
-      //  movement.enabled = false;//
+        //movement.enabled = false;//
         dialog = true;
         Sentences.Clear();
-        Name.Clear();
-        dialogueSprite.Clear();
-
-        foreach (Sprite head in dialogue.head)
-        {
-            dialogueSprite.Enqueue(head);
-        }
+        Audio.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
             Sentences.Enqueue(sentence);
         }
 
-        foreach (string name in dialogue.name)
+        foreach (AudioSource audio in dialogue.audio)
         {
-            Name.Enqueue(name);
+            Audio.Enqueue(audio);
         }
 
         DisplayNextSentence();
@@ -76,17 +67,15 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = Sentences.Dequeue();
-        string name = Name.Dequeue();
-        Sprite head = dialogueSprite.Dequeue();
+        AudioSource audio = Audio.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence, name, head));
+        StartCoroutine(TypeSentence(sentence, audio));
     }
 
-    IEnumerator TypeSentence(string sentence, string name, Sprite head)
+    IEnumerator TypeSentence(string sentence, AudioSource audio)
     {
         dialogueText.text = "";
-        nameText.text = name;
-        dialogueIcon.sprite = head;
+        //dialogueAudio.AudioSource = audio;//
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -96,15 +85,14 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-       // movement.enabled = true;//
+        //movement.enabled = true;//
         dialog = false;
-        anekdotAudioSource.SetActive(false);
         dialogueAnimator.SetBool("IsOpen", false);
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             DisplayNextSentence();
         }
@@ -112,16 +100,17 @@ public class DialogueManager : MonoBehaviour
         {
             if (!pause)
             {
-             //   gameManager.Pause();//
+                gameManager.Pause();
                 pause = true;
             }
             else
             {
-              //  gameManager.Continue();//
+                gameManager.Continue();
                 if (dialog)
-                  //  movement.enabled = false;//
+                    //movement.enabled = false;//
                 pause = false;
             }
         }
     }
 }
+

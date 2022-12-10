@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Начало диалога");
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             Destroy(this.gameObject);
         }
