@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence, AudioSource audio)
     {
         dialogueText.text = "";
-        //dialogueAudio.AudioSource = audio;//
+        dialogueAudio = audio;
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
