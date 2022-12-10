@@ -16,14 +16,11 @@ public class DiePanel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R)) 
             FindObjectOfType<GameManager>().Rebirth();
-        if (Time.time > end_time)
-        {
-            FindObjectOfType<GameManager>().EndGame();
-        }
+        if (Time.time > end_time) FindObjectOfType<GameManager>().EndGame();
     }
 
-    private void End() {
-        Debug.Log("End");
-        FindObjectOfType<GameManager>().EndGame();
+    private void Restart()
+    {
+        FindObjectOfType<GameManager>().Restart();
     }
 }
