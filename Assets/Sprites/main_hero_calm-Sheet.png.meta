@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8471af08b85fd014889485ad51e19912
+=======
+guid: 8ad724b55874cee4689322b39e9aedce
+>>>>>>> 2a92d31a02109cefe199c39b87134a63f08ddd00
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 2a92d31a02109cefe199c39b87134a63f08ddd00
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,6 +109,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -356,6 +365,23 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> 2a92d31a02109cefe199c39b87134a63f08ddd00
     outline: []
     physicsShape: []
     bones: []
@@ -366,6 +392,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
     nameFileIdTable:
       main_hero_calm-Sheet_6: 2090142097
       main_hero_calm-Sheet_10: 1165735213
@@ -379,6 +406,9 @@ TextureImporter:
       main_hero_calm-Sheet_1: 2045189891
       main_hero_calm-Sheet_5: -1217125014
       main_hero_calm-Sheet_8: -1405377654
+=======
+    nameFileIdTable: {}
+>>>>>>> 2a92d31a02109cefe199c39b87134a63f08ddd00
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
