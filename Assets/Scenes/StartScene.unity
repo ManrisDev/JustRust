@@ -5347,6 +5347,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8615d0a9fdd6cf949b601d3b691be1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 227485153}
+  camSpeed: 3
+  camHeight: 0
+  leftLimit: -7.5
+  rightLimit: 7.5
+  topLimit: 3
+  bottomLimit: 0
+  bottomViewLimit: 0
+  topViewLimit: 0
 --- !u!1 &757820216
 GameObject:
   m_ObjectHideFlags: 0
