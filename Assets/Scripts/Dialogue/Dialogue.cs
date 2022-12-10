@@ -9,7 +9,7 @@ public class Dialogue
 
     //  public Sprite[] head;//
 
-    public AudioSource[] audio;
+    public AudioClip[] audio;
 
     [TextArea(3,10)]
     public string[] sentences;
