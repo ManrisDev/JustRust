@@ -24,7 +24,7 @@ public class Player : Entity
 
     private void Start()
     {
-        lives = 100;
+        lives = 25;
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
