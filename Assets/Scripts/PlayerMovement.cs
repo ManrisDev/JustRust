@@ -25,7 +25,9 @@ public class PlayerMovement : Entity
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        dsfsdf;
         animator = GetComponent<Animator>();
+        fdsf;
     }
 
     private void FixedUpdate()
