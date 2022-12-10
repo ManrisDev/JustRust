@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject settingsPanel;
     public void StartGame()
     {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("StartScene");
     }
 
     public void Settings()
@@ -20,11 +19,5 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-        menuPanel.SetActive(true);
-        settingsPanel.SetActive(false);
     }
 }
