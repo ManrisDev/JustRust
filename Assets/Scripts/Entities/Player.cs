@@ -66,14 +66,15 @@ public class Player : Entity
     private void Walk()
     {
         if (isGrounded) State = States.walk;
+        FindObjectOfType<PlayerSounds>().PlayWalkSound();
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, walkSpeed * Time.deltaTime);
     }
 
     private void Run()
     {
-
         if (isGrounded) State = States.run;
+        FindObjectOfType<PlayerSounds>().PlayRunSound();
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, runSpeed * Time.deltaTime);
         //sprite.flipX = direction.x < 0f;
@@ -82,6 +83,7 @@ public class Player : Entity
     private void Jump()
     {
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        FindObjectOfType<PlayerSounds>().PlayJumpSound();
     }
 
     public override void Take_Damage(int lost_lives)
@@ -93,6 +95,7 @@ public class Player : Entity
             lives--;
             if (lives == 0)
             {
+                FindObjectOfType<PlayerSounds>().PlayDieSound();
                 if (!isRebirth) {
                     FindObjectOfType<GameManager>().RebirthOrDie();
                     lives = GlobalVar.Get_lives();
