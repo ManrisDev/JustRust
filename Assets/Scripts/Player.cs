@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : Entity
+public class Player : Entity
 {
     [Header("Characteristics")]
     [SerializeField] private float walkSpeed = 3f; //Movement speed
