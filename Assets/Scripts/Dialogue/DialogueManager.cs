@@ -12,15 +12,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
 
     [Header("Dialogue")]
-    [SerializeField] private AudioSource dialogueAudio;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Animator dialogueAnimator;
+    [SerializeField] private AudioSource dialogueSource;
 
     [Header("Game Manager")]
-    [SerializeField] private GameManager gameManager;
-
+    //[SerializeField] public GameManager gameManager;//
+    private Queue<AudioClip> Audio;
     private Queue<string> Sentences;
-    private Queue<AudioSource> Audio;
     private bool pause = false;
     private bool dialog = false;
 
@@ -33,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         Sentences = new Queue<string>();
-        Audio = new Queue<AudioSource>();
+        Audio = new Queue<AudioClip>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -45,16 +44,14 @@ public class DialogueManager : MonoBehaviour
         Sentences.Clear();
         Audio.Clear();
 
+        foreach (AudioClip audio in dialogue.audio)
+        {
+            Audio.Enqueue(audio);
+        }
         foreach (string sentence in dialogue.sentences)
         {
             Sentences.Enqueue(sentence);
         }
-
-        foreach (AudioSource audio in dialogue.audio)
-        {
-            Audio.Enqueue(audio);
-        }
-
         DisplayNextSentence();
     }
 
@@ -67,15 +64,16 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = Sentences.Dequeue();
-        AudioSource audio = Audio.Dequeue();
+        AudioClip audio = Audio.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, audio));
     }
 
-    IEnumerator TypeSentence(string sentence, AudioSource audio)
+    IEnumerator TypeSentence(string sentence, AudioClip audio)
     {
         dialogueText.text = "";
-        dialogueAudio = audio;
+        dialogueSource.clip = audio;
+        dialogueSource.PlayOneShot(dialogueSource.clip);
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -88,24 +86,26 @@ public class DialogueManager : MonoBehaviour
         //movement.enabled = true;//
         dialog = false;
         dialogueAnimator.SetBool("IsOpen", false);
+
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            dialogueSource.Stop();
             DisplayNextSentence();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!pause)
             {
-                gameManager.Pause();
+               // gameManager.Pause();//
                 pause = true;
             }
             else
             {
-                gameManager.Continue();
+                //gameManager.Continue();//
                 if (dialog)
                     //movement.enabled = false;//
                 pause = false;
