@@ -5027,7 +5027,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1859410354, guid: f86a8844dc059344f8ecc3b8ac324620, type: 3}
   m_Color: {r: 0.6698113, g: 0.26223743, b: 0.26223743, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5046,8 +5046,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227485150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.04, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -0.36, y: -0.09, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384012300}
@@ -5070,14 +5070,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.47, y: 0.97}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.47298598, y: 0.9716866}
   m_EdgeRadius: 0
 --- !u!114 &227485155
 MonoBehaviour:
@@ -5104,7 +5104,7 @@ Animator:
   m_GameObject: {fileID: 227485150}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9691be7d2ab7494499f0e3ffa2c30c55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15f22541b1efd7345ad2a39a288d3218, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16733,11 +16733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
-  nameText: {fileID: 0}
+  dialogueAudio: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogueIcon: {fileID: 0}
   dialogueAnimator: {fileID: 0}
-  anekdotAudioSource: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!4 &2125083382
 Transform:
   m_ObjectHideFlags: 0
