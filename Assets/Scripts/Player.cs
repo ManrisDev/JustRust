@@ -14,7 +14,9 @@ public class Player : Entity
 
     private float direction;
     private bool isGrounded;
-    private bool isFight;
+    private bool isFight = false;
+
+    private bool isRebirth = false;
 
     private States State
     {
@@ -38,9 +40,9 @@ public class Player : Entity
     {
         direction = Input.GetAxis("Horizontal");
         if (direction > 0)
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         else if (direction < 0)
-            transform.localScale = new Vector2(1f, 1f);
+            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
 
         if (isGrounded) State = States.idle;
 
@@ -84,23 +86,28 @@ public class Player : Entity
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    /*public override void Take_Damage(int lost_lives)
+    public override void Take_Damage(int lost_lives)
     {
         int remaining_lives = lives - lost_lives;
         animator.SetTrigger("damage");
         while (lives > remaining_lives)
         {
-            hearts[lives - 1].SetActive(false);
             lives--;
             if (lives == 0)
             {
-                FindObjectOfType<GameManager>().EndGame();
+                if (!isRebirth) {
+                    FindObjectOfType<GameManager>().RebirthOrDie();
+                    lives = GlobalVar.Get_lives();
+                    isRebirth = true;
+                }
+                else 
+                    FindObjectOfType<GameManager>().EndGame();
                 break;
             }
         }
         GlobalVar.Set_lives(lives);
         Debug.Log(lives);
-    }*/
+    }
 
     public override void Die()
     {
