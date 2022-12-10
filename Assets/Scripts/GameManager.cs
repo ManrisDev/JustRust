@@ -4,13 +4,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Panels")]
-    [SerializeField] private GameObject pausePanel;
+    //[SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject diePanel;
 
     [Header("Animators")]
-    [SerializeField] private Animator dialogueAnimator;
+    //[SerializeField] private Animator dialogueAnimator;
+    [SerializeField] private Animator diePanelAnimator;
 
     [Header("Player")]
+    [SerializeField] private GameObject player;
     [SerializeField] private Player movement;
 
     private bool pause = false;
@@ -26,10 +28,6 @@ public class GameManager : MonoBehaviour
         {
             Pause();
         }
-    }
-
-    public void Rebirth() {
-
     }
 
     public void Restart()
@@ -50,10 +48,24 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Loading");
     }
 
-    public void EndGame()
+    public void RebirthOrDie()
     {
+        Debug.Log("RebirthOrDie");
         diePanel.SetActive(true);
-        GlobalVar.Set_level_index(0);
+        movement.enabled = false;
+    }
+
+    public void Rebirth() {
+        Debug.Log("Rebirth");
+        movement.enabled = true;
+        GlobalVar.Set_lives(50);
+        diePanel.SetActive(false);
+    }
+
+    public void EndGame() {
+        Debug.Log("EndGame");
+        diePanel.SetActive(true);
+        diePanelAnimator.SetTrigger("die");
         FindObjectOfType<Player>().Die();
     }
 
@@ -70,16 +82,16 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         pause = true; 
-        pausePanel.SetActive(true);
+        //pausePanel.SetActive(true);
         movement.enabled = false;
-        dialogueAnimator.SetBool("pause", true);
+        //dialogueAnimator.SetBool("pause", true);
     }
 
     public void Continue()
     {
         pause = false; 
-        pausePanel.SetActive(false);
+        //pausePanel.SetActive(false);
         movement.enabled = true;
-        dialogueAnimator.SetBool("pause", false);
+        //dialogueAnimator.SetBool("pause", false);
     }
 }

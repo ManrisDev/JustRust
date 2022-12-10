@@ -7,14 +7,14 @@ public class Player : Entity
     [SerializeField] private float runSpeed = 8f;
     [SerializeField] private float jumpForce = 15f; //Jump power
 
-    [SerializeField] private float colliderArea = 0.51f;
-
     private new Rigidbody2D rigidbody;
     private Animator animator;
 
     private float direction;
     private bool isGrounded;
-    private bool isFight;
+    private bool isFight = false;
+
+    private bool isRebirth = false;
 
     private States State
     {
@@ -29,18 +29,13 @@ public class Player : Entity
         animator = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
-    {
-        CheckGround();
-    }
-
     private void Update()
     {
         direction = Input.GetAxis("Horizontal");
         if (direction > 0)
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         else if (direction < 0)
-            transform.localScale = new Vector2(1f, 1f);
+            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
 
         if (isGrounded) State = States.idle;
 
@@ -55,12 +50,17 @@ public class Player : Entity
             Jump();
     }
 
-    private void CheckGround()
-    {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, colliderArea);
-        isGrounded = collider.Length > 1;
+    private void OnCollisionEnter2D (Collision2D collision) {
+        if (collision.gameObject.tag == "Ground") {
+            isGrounded = true;
+        }
+    }
 
-        if (!isGrounded) State = States.jump;
+    private void OnCollisionExit2D (Collision2D collision) {
+        if (collision.gameObject.tag == "Ground") {
+            State = States.jump;
+            isGrounded = false;
+        }
     }
 
     private void Walk()
@@ -84,23 +84,28 @@ public class Player : Entity
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    /*public override void Take_Damage(int lost_lives)
+    public override void Take_Damage(int lost_lives)
     {
         int remaining_lives = lives - lost_lives;
         animator.SetTrigger("damage");
         while (lives > remaining_lives)
         {
-            hearts[lives - 1].SetActive(false);
             lives--;
             if (lives == 0)
             {
-                FindObjectOfType<GameManager>().EndGame();
+                if (!isRebirth) {
+                    FindObjectOfType<GameManager>().RebirthOrDie();
+                    lives = GlobalVar.Get_lives();
+                    isRebirth = true;
+                }
+                else 
+                    FindObjectOfType<GameManager>().EndGame();
                 break;
             }
         }
         GlobalVar.Set_lives(lives);
         Debug.Log(lives);
-    }*/
+    }
 
     public override void Die()
     {
