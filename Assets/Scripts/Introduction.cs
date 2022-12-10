@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class Text : MonoBehaviour
+public class Introduction : MonoBehaviour
 {
     public TMP_Text TextGameObject;
     private string text;
@@ -24,5 +22,10 @@ public class Text : MonoBehaviour
             TextGameObject.text += abc;
             yield return new WaitForSeconds(loadText);
         }
+    }
+
+    public void EndInt()
+    {
+        FindObjectOfType<GameManager>().EndIntroduction();
     }
 }

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Audio;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -15,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Animator dialogueAnimator;
     [SerializeField] private AudioSource dialogueSource;
+
+    [SerializeField] private GameObject dialoguePanel;
 
     [Header("Game Manager")]
     //[SerializeField] public GameManager gameManager;//
@@ -37,6 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialoguePanel.SetActive(true);
         dialogueAnimator.SetBool("IsOpen", true);
         State = States.idle;
         //movement.enabled = false;//

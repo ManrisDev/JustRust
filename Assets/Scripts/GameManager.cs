@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject diePanel;
     [SerializeField] private GameObject rebornPanel;
+    [SerializeField] private GameObject introductionPanel;
 
     [Header("Animators")]
     //[SerializeField] private Animator dialogueAnimator;
@@ -46,6 +47,12 @@ public class GameManager : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene("Loading");
+    }
+
+    public void EndIntroduction()
+    {
+        movement.enabled = true;
+        introductionPanel.SetActive(false);
     }
 
     public void RebirthOrDie()
