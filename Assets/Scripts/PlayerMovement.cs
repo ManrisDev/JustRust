@@ -3,18 +3,18 @@ using UnityEngine;
 public class PlayerMovement : Entity
 {
     [Header("Characteristics")]
-    [SerializeField] private float speed = 3f; //Movement speed
-    [SerializeField] private float jumpForce = 17f; //Jump power
-    [SerializeField] private int lives = 100;
+    [SerializeField] private float walkSpeed = 3f; //Movement speed
+    [SerializeField] private float runSpeed = 8f;
+    [SerializeField] private float jumpForce = 15f; //Jump power
 
-    [SerializeField][Range(0, 1f)] private float colliderArea = 0.3f;
+    [SerializeField] private float colliderArea = 0.51f;
 
     private new Rigidbody2D rigidbody;
     private Animator animator;
 
     private float direction;
     private bool isGrounded;
-    private bool isFight;   
+    private bool isFight;
 
     private States State
     {
@@ -24,6 +24,7 @@ public class PlayerMovement : Entity
 
     private void Start()
     {
+        lives = 100;
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -44,7 +45,12 @@ public class PlayerMovement : Entity
         if (isGrounded) State = States.idle;
 
         if (Input.GetButton("Horizontal"))
-            Walk();
+            if (isFight) {
+                Run();
+            }
+            else {
+                Walk();
+            }
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
     }
@@ -59,9 +65,9 @@ public class PlayerMovement : Entity
 
     private void Walk()
     {
-        if (isGrounded) State = States.run;
+        if (isGrounded) State = States.walk;
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, walkSpeed * Time.deltaTime);
     }
 
     private void Run()
@@ -69,7 +75,7 @@ public class PlayerMovement : Entity
 
         if (isGrounded) State = States.run;
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, runSpeed * Time.deltaTime);
         //sprite.flipX = direction.x < 0f;
     }
 
