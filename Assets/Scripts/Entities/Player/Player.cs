@@ -33,15 +33,17 @@ public class Player : Entity
     private void Update()
     {
         direction = Input.GetAxis("Horizontal");
+
+
         if (direction > 0)
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector2(5, transform.localScale.y);
         else if (direction < 0)
-            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector2(-5, transform.localScale.y);
 
         if (isGrounded) State = States.idle;
 
         if (Input.GetButton("Horizontal"))
-                Run();
+                Walk();
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
     }
@@ -59,9 +61,9 @@ public class Player : Entity
         }
     }
 
-    private void Run()
+    private void Walk()
     {
-        if (isGrounded) State = States.run;
+        if (isGrounded) State = States.walk;
         FindObjectOfType<PlayerSounds>().PlayWalkSound();
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
