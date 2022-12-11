@@ -310,8 +310,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 3aa3e2b18f87de345b7b8d098bd1156e, type: 3}
     - {fileID: 8300000, guid: a1e98ee70c2c8fe4d9526d5fd3b630b0, type: 3}
     - {fileID: 8300000, guid: e2d03ca2d82b9304b8f0b8a483915061, type: 3}
+    - {fileID: 8300000, guid: c69b54de76dc857438edaf899e522d49, type: 3}
     - {fileID: 8300000, guid: b480554fa5b68f140b4ebf7d42dd7f47, type: 3}
-    - {fileID: 8300000, guid: 8791f7341e4645047ab03146f1315311, type: 3}
+    - {fileID: 8300000, guid: d8d23e6675437a04ca99cf32ef6321b5, type: 3}
+    - {fileID: 8300000, guid: e1732e2ff5aaf1747935fc152da0145b, type: 3}
     - {fileID: 8300000, guid: da104312f539e4b4ca3da44d132c5580, type: 3}
     - {fileID: 8300000, guid: e1732e2ff5aaf1747935fc152da0145b, type: 3}
     sentences:
@@ -407,7 +409,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.31764707}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -629,7 +631,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e7383874f7a10154db9aa3d790267906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4104b9b25cca51744a1ce11427e2f2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5618,7 +5620,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e7383874f7a10154db9aa3d790267906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4104b9b25cca51744a1ce11427e2f2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5985,7 +5987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &200574258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6005,7 +6007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31218493, y: 0.8275589}
   m_AnchorMax: {x: 0.8343208, y: 1}
-  m_AnchoredPosition: {x: -140.64874, y: 148.53615}
+  m_AnchoredPosition: {x: -140.64873, y: 148.53615}
   m_SizeDelta: {x: 917.49976, y: 1.1000061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &200574259
@@ -7657,7 +7659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31218493, y: 0.8275589}
   m_AnchorMax: {x: 0.8343208, y: 1}
-  m_AnchoredPosition: {x: -140.64996, y: -9.773926}
+  m_AnchoredPosition: {x: -140.64995, y: -9.773926}
   m_SizeDelta: {x: 917.49976, y: 1.1000061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572045812
@@ -7850,6 +7852,8 @@ MonoBehaviour:
     audio:
     - {fileID: 8300000, guid: 07d45a78f9be2444a92d842824066346, type: 3}
     - {fileID: 8300000, guid: e1732e2ff5aaf1747935fc152da0145b, type: 3}
+    - {fileID: 8300000, guid: 765bd7d6482f2c54aa93069a1c30de1f, type: 3}
+    - {fileID: 8300000, guid: 765bd7d6482f2c54aa93069a1c30de1f, type: 3}
     - {fileID: 8300000, guid: 765bd7d6482f2c54aa93069a1c30de1f, type: 3}
     sentences:
     - "\u0421\u0422\u041E\u0419, \u043D\u0430\u0437\u043E\u0432\u0438 \u0441\u0432\u043E\u0439
@@ -8392,12 +8396,13 @@ MonoBehaviour:
     audio:
     - {fileID: 8300000, guid: 07d45a78f9be2444a92d842824066346, type: 3}
     - {fileID: 8300000, guid: 8791f7341e4645047ab03146f1315311, type: 3}
+    - {fileID: 8300000, guid: 765bd7d6482f2c54aa93069a1c30de1f, type: 3}
     sentences:
     - "\u041A\u0442\u043E \u0431\u044B \u043D\u0435 \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u043B
       \u044D\u0442\u0438\u043C \u0440\u043E\u0431\u043E\u0442\u043E\u043C, \u0441\u0434\u0430\u0432\u0430\u0439\u0441\u044F,
       \u044D\u0442\u043E \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u043F\u0440\u0435\u0434\u0443\u043F\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u0435"
     - "\u041D\u0435\u0442"
-    - "\u041A\u0430\u043A \u0431\u0434\u0443\u0442\u043E \u044D\u0442\u043E \u0445\u043E\u0442\u044C
+    - "\u041A\u0430\u043A \u0431\u0443\u0434\u0442\u043E \u044D\u0442\u043E \u0445\u043E\u0442\u044C
       \u043A\u043E\u0433\u0434\u0430-\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u043B\u043E...."
 --- !u!61 &796596944
 BoxCollider2D:
@@ -9344,7 +9349,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7becc438d262cac4d93e41abd02f3319, type: 3}
     - {fileID: 8300000, guid: 0e2f608aa2f7caa4f8405dd9da1c0dbb, type: 3}
     - {fileID: 8300000, guid: f2ab558f530473c44ae9da0fd5af8054, type: 3}
-    - {fileID: 8300000, guid: 46cc84bf4dece204ea68d7574e24dd67, type: 3}
+    - {fileID: 8300000, guid: 5ef7e8e83a5f0714188ce7445c52b1ee, type: 3}
+    - {fileID: 8300000, guid: 11e4c43a9e8e09e40a195510a8c70cd1, type: 3}
+    - {fileID: 8300000, guid: bb842f618a68dac42b54b338a8c8a72b, type: 3}
+    - {fileID: 8300000, guid: ef001828636d7174bb17ac153007a937, type: 3}
     sentences:
     - "\u0421\u043C\u043E\u0442\u0440\u0438, \u043A\u0430\u043A\u043E\u0433\u043E
       \u043A\u0440\u0443\u0442\u043E\u0433\u043E \u0440\u043E\u0431\u043E\u0442\u0430
@@ -9651,7 +9659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e7383874f7a10154db9aa3d790267906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4104b9b25cca51744a1ce11427e2f2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10251,6 +10259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     audio:
+    - {fileID: 8300000, guid: 8791f7341e4645047ab03146f1315311, type: 3}
     - {fileID: 8300000, guid: 3aa3e2b18f87de345b7b8d098bd1156e, type: 3}
     sentences:
     - "\u041B\u044E\u0434\u0435\u0439 \u043D\u0430 \u0443\u043B\u0438\u0446\u0435
@@ -15472,7 +15481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e7383874f7a10154db9aa3d790267906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4104b9b25cca51744a1ce11427e2f2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21489,7 +21498,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3826981661
+    rgba: 4294967295
   m_fontColor: {r: 0.11320752, g: 0.10615875, b: 0.10615875, a: 0.89411765}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -22089,7 +22098,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23787,11 +23796,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd139e92894a67248991d8adbdc1b5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 227485155}
   playerAnimator: {fileID: 227485156}
   dialogueText: {fileID: 460982647}
   dialogueAnimator: {fileID: 200574259}
   dialogueSource: {fileID: 481302257}
   dialoguePanel: {fileID: 200574257}
+  gameManager: {fileID: 1972232336}
 --- !u!4 &2125083382
 Transform:
   m_ObjectHideFlags: 0
@@ -23876,7 +23887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794169718989152411, guid: 458148e26f546cf40bdee854593cca85, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 2794169718989152411, guid: 458148e26f546cf40bdee854593cca85, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23912,6 +23923,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794169718989152420, guid: 458148e26f546cf40bdee854593cca85, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794169718989152420, guid: 458148e26f546cf40bdee854593cca85, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
