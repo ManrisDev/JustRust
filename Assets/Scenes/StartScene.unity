@@ -5724,7 +5724,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: aefe0bcf2ba07404a86e32bdf56dcda3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecebd5308b611334a8fb856faad0e5ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5808,7 +5808,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8d78e64fb8405384085f076b48b08138, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b7565beb2524b04b8858f0d0951efa9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5932,7 +5932,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4654cab12383d8a498ddde609f072b01, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7316,7 +7316,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3483b1907b47a8a419486fc69e168edc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9090,7 +9090,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cef2013d954a7b741bcdac94eded6835, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10682,7 +10682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTextAnimator: {fileID: 1948911747}
   trigger: {fileID: 1147097096}
-  fence: {fileID: 0}
+  fence: {fileID: 1305399269}
 --- !u!1 &1148261103
 GameObject:
   m_ObjectHideFlags: 0
@@ -11136,7 +11136,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b062280643a253b46b3e06e7ed893ae9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22692,7 +22692,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 7d67597cdc7dc13479391a8f94d88926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf5d93105ae386f46809c7730a7bfecd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23542,6 +23542,7 @@ GameObject:
   - component: {fileID: 1705999005}
   - component: {fileID: 1705999004}
   - component: {fileID: 1705999003}
+  - component: {fileID: 1705999006}
   m_Layer: 0
   m_Name: SecondTrigger
   m_TagString: Untagged
@@ -23665,11 +23666,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1710313733 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1902824116530171358, guid: b601d75ead9349041af3e3e0a2681bec, type: 3}
-  m_PrefabInstance: {fileID: 88262078}
+--- !u!114 &1705999006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705999001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c99042f086624445ba71e9ac2fb2197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceOne: {fileID: 440243001}
+  audioSourceTwo: {fileID: 1263770259}
 --- !u!1 &1740195999
 GameObject:
   m_ObjectHideFlags: 0
@@ -23862,7 +23872,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c76f0ff25512434db153d75b0de2c41, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24551,7 +24561,6 @@ GameObject:
   - component: {fileID: 1899373204}
   - component: {fileID: 1899373203}
   - component: {fileID: 1899373202}
-  - component: {fileID: 1899373205}
   m_Layer: 0
   m_Name: FirstTrigger
   m_TagString: Untagged
@@ -24713,20 +24722,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1899373205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899373200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c99042f086624445ba71e9ac2fb2197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSourceOne: {fileID: 440243001}
-  audioSourceTwo: {fileID: 1263770259}
 --- !u!1 &1903968264
 GameObject:
   m_ObjectHideFlags: 0
@@ -24967,7 +24962,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 750c7c7685d308c44b25528ca8697958, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e32c8a42d2d256e4e91b0ae98decd3d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
