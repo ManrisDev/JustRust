@@ -5,8 +5,7 @@ public class CkeckPromts : MonoBehaviour
     Animator animator;
 
     bool step_1 = true;
-    bool step_2;
-    bool step_3;
+    bool step_2, step_3, step_4;
 
     float delay;
 
@@ -21,7 +20,6 @@ public class CkeckPromts : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) 
             || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Debug.Log("step0");
                 animator.SetTrigger("next");
                 step_1 = false;
                 step_2 = true;
@@ -29,7 +27,6 @@ public class CkeckPromts : MonoBehaviour
         if (step_2)
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("step1");
                 animator.SetTrigger("next");
                 step_2 = false;
                 step_3 = true;
@@ -37,13 +34,11 @@ public class CkeckPromts : MonoBehaviour
         if(step_3)
             if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
             {
-                Debug.Log("step2");
                 animator.SetTrigger("next");
                 step_3 = false;
-                delay = Time.time + 4f;
+                step_4 = true;
             }
-        else if (!step_1 && !step_2 && !step_3)
-        if (Time.time > delay)
+        if(step_4)
             animator.SetTrigger("next");
     }
 }
