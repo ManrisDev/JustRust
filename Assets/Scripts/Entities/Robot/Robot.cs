@@ -10,7 +10,7 @@ public class Robot : Entity
 
     private void Start()
     {
-        lives = 50;
+        lives = 100;
         speed = 2;
         damage = 20;
     }

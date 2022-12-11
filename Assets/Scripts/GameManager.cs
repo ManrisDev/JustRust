@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void Rebirth() {
         movement.enabled = true;
-        GlobalVar.Set_lives(50);
+        GlobalVar.Set_lives(125);
         rebornPanel.SetActive(false);
     }
 
