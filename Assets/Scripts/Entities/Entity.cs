@@ -3,12 +3,14 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
 
-    protected int lives = 5; //Lives count
+    protected int lives = 10; //Lives count
+    protected int damage = 5;
+
+    protected float speed = 5f;
 
     public virtual void Take_Damage(int lost_lives)
     {
-        lives -= lost_lives;
-        Debug.Log(this.gameObject.name + " lives: " + lives);
+        this.lives -= lost_lives;
 
         if (this.lives < 1)
         {
@@ -25,7 +27,6 @@ public abstract class Entity : MonoBehaviour
 public enum States
 {
     idle,
-    walk,
     run,
     jump
 }
