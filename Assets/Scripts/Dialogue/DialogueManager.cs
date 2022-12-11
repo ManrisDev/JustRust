@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
 
     [Header("Game Manager")]
-    [SerializeField] public GameManager gameManager;
+    [SerializeField] public GameObject falling;
     private Queue<AudioClip> Audio;
     private Queue<string> Sentences;
     private bool pause = false;
@@ -90,6 +90,8 @@ public class DialogueManager : MonoBehaviour
         dialog = false;
         dialogueAnimator.SetBool("IsOpen", false);
         professorAnimator.SetTrigger("run");
+        if (Sentences.ToArray().Length == 14)
+            falling.SetActive(true);
     }
 
     public void Update()
