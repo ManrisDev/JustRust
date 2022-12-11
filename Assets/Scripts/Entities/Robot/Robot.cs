@@ -4,6 +4,7 @@ public class Robot : Entity
 {
     [SerializeField] GameObject player;
     [SerializeField] float distanceBetween;
+    [SerializeField] private Animator animator;
     private float distance;
     bool isRun = false;
 
@@ -21,9 +22,23 @@ public class Robot : Entity
 
         if (distance < distanceBetween)
         {
+            if (direction.x > 0)
+                transform.localScale = new Vector2(5, transform.localScale.y);
+            else if (direction.x < 0)
+                transform.localScale = new Vector2(-5, transform.localScale.y);
             isRun = true;
+            animator.SetBool("run", true);
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
+        else 
+        {
+            isRun = false;
+            animator.SetBool("run", false);
+        }
+        if (distance < 5f)
+            animator.SetBool("attack", true);
+        else
+            animator.SetBool("attack", false);
         
     }
 

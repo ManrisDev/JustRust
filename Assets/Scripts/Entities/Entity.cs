@@ -28,5 +28,7 @@ public enum States
 {
     idle,
     run,
-    jump
+    run_sword,
+    jump,
+    attack_bottom,
 }
