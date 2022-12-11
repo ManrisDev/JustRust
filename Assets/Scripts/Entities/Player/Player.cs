@@ -11,7 +11,7 @@ public class Player : Entity
 
     private float direction;
     private bool isGrounded;
-    private bool haveSword = false;
+    private bool haveSword = true;
 
     private bool isRebirth = false;
 
@@ -49,8 +49,6 @@ public class Player : Entity
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
         if (Input.GetKeyDown(KeyCode.J))
-            AttackTop();
-        if (Input.GetKeyDown(KeyCode.K))
             AttackBottom();
     }
 
@@ -86,12 +84,6 @@ public class Player : Entity
     {
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         FindObjectOfType<PlayerSounds>().PlayJumpSound();
-    }
-
-    public void AttackTop()
-    {
-        attackTime = Time.time + 1f;
-        State = States.attack_top;
     }
 
     public void AttackBottom()
