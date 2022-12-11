@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject diePanel;
     [SerializeField] private GameObject rebornPanel;
     [SerializeField] private GameObject introductionPanel;
-    [SerializeField] private GameObject FirstTrigger;
+    [SerializeField] private GameObject firstTrigger;
 
     [Header("Animators")]
-    //[SerializeField] private Animator dialogueAnimator;
+    [SerializeField] private Animator dialogueAnimator;
 
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour
     {
         movement.enabled = true;
         introductionPanel.SetActive(false);
-        FirstTrigger.SetActive(true);
-
+        firstTrigger.SetActive(true);
     }
 
     public void RebirthOrDie()
