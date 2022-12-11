@@ -167,7 +167,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 86e8b1673c934da4982033cf7c7ac394, type: 3}
   - {fileID: 8300000, guid: c1ef8a5e09728024c98a7591c4c53bcf, type: 3}
   - {fileID: 8300000, guid: 3c12cc8d27e0e7c448f878d999ae5e91, type: 3}
-  attack_sounds: []
+  attack_sounds:
+  - {fileID: 8300000, guid: 0e250e2323c9cff44b46d09db7680698, type: 3}
+  - {fileID: 8300000, guid: 693e39478f793e24e821344a4a0ce51b, type: 3}
+  - {fileID: 8300000, guid: d8896b9e929244748bd5f9946c9032e4, type: 3}
+  - {fileID: 8300000, guid: 5d7c75d2b05bc3742939f41107ccc63f, type: 3}
 --- !u!114 &4488566
 MonoBehaviour:
   m_ObjectHideFlags: 0
