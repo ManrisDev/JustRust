@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Audio;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Player")]
-    //[SerializeField] private Hero movement;//
+    [SerializeField] private Player movement;
     [SerializeField] private Animator playerAnimator;
 
     [Header("Dialogue")]
@@ -16,12 +14,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator dialogueAnimator;
     [SerializeField] private AudioSource dialogueSource;
 
+    [SerializeField] private GameObject dialoguePanel;
+
     [Header("Game Manager")]
-    //[SerializeField] public GameManager gameManager;//
+    [SerializeField] public GameManager gameManager;
     private Queue<AudioClip> Audio;
     private Queue<string> Sentences;
     private bool pause = false;
     private bool dialog = false;
+
+    [SerializeField] private Animator professorAnimator;
 
     private States State
     {
@@ -37,9 +39,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialoguePanel.SetActive(true);
         dialogueAnimator.SetBool("IsOpen", true);
         State = States.idle;
-        //movement.enabled = false;//
+        movement.enabled = false;
         dialog = true;
         Sentences.Clear();
         Audio.Clear();
@@ -83,10 +86,10 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        //movement.enabled = true;//
+        movement.enabled = true;
         dialog = false;
         dialogueAnimator.SetBool("IsOpen", false);
-
+        professorAnimator.SetTrigger("run");
     }
 
     public void Update()

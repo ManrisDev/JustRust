@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        position.x = player.position.x;
+        position.x = player.position.x + 4.5f;
         position.y = player.position.y + camHeight;
         position.z = -10;
 
@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.grey;
+        Gizmos.color = Color.red;
         Gizmos.DrawLine(new Vector2(leftLimit, topLimit), new Vector2(rightLimit, topLimit));
         Gizmos.DrawLine(new Vector2(leftLimit, topLimit), new Vector2(leftLimit, bottomLimit));
         Gizmos.DrawLine(new Vector2(leftLimit, bottomLimit), new Vector2(rightLimit, bottomLimit));

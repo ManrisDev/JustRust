@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject diePanel;
     [SerializeField] private GameObject rebornPanel;
+    [SerializeField] private GameObject introductionPanel;
+    [SerializeField] private GameObject firstTrigger;
 
     [Header("Animators")]
-    //[SerializeField] private Animator dialogueAnimator;
+    [SerializeField] private Animator dialogueAnimator;
 
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -46,6 +48,13 @@ public class GameManager : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene("Loading");
+    }
+
+    public void EndIntroduction()
+    {
+        movement.enabled = true;
+        introductionPanel.SetActive(false);
+        firstTrigger.SetActive(true);
     }
 
     public void RebirthOrDie()
