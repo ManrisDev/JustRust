@@ -945,7 +945,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9e18d047d56af6147a1c3758557b2979, type: 3}
   - {fileID: 8300000, guid: db06090ff0bf9514f9b2fd045df22c98, type: 3}
   - {fileID: 8300000, guid: e4e34f12cc57d1d4f9fb442147c3f049, type: 3}
-  jump_sounds: []
+  jump_sounds:
+  - {fileID: 8300000, guid: 72c4edcf8029c6349be42a473733ef7c, type: 3}
 --- !u!114 &2794169718989152409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87667b4b13f50a4baa812f8439dc728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_: 5
+  speed_: 8
   jumpForce: 15
 --- !u!61 &2794169718989152408
 BoxCollider2D:
