@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -145}
+  m_AnchoredPosition: {x: 0.9, y: -150.7}
   m_SizeDelta: {x: 300, y: 110.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23037031
@@ -788,7 +788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.9, y: -33.1}
   m_SizeDelta: {x: 300, y: 110.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215449330
@@ -1154,8 +1154,8 @@ MonoBehaviour:
   - {fileID: 806076320}
   - {fileID: 986502898}
   m_Bounds:
-    m_Center: {x: -0.17096724, y: 0.120670915, z: 0}
-    m_Extent: {x: 0.24155839, y: 0.43382275, z: 0}
+    m_Center: {x: -0.17096524, y: 0.120670855, z: 0}
+    m_Extent: {x: 0.24155895, y: 0.4338231, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2210,7 +2210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 267}
+  m_AnchoredPosition: {x: -12.3, y: 119.5}
   m_SizeDelta: {x: 388, y: 95.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970656905
@@ -2233,10 +2233,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game
+  m_text: 'Just Rust
+
+    Already!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7fba0a628e754cc45bdea59c7f0760c7, type: 2}
-  m_sharedMaterial: {fileID: -5308879687782643973, guid: 7fba0a628e754cc45bdea59c7f0760c7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e57b4aa200a0904abe88e5d3f84bbdf, type: 2}
+  m_sharedMaterial: {fileID: -5568557378729236359, guid: 9e57b4aa200a0904abe88e5d3f84bbdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2260,8 +2262,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2296,7 +2298,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -88.93251, y: 0, z: -139.07503, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
