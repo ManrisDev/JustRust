@@ -39,10 +39,6 @@ public class FirstEnd : MonoBehaviour
             }
         }
 
-        if (isAlive == false)
-        {
-            trigger.SetActive(true);
-        }
     }
 }
 
