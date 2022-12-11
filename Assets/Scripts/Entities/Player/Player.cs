@@ -11,9 +11,11 @@ public class Player : Entity
 
     private float direction;
     private bool isGrounded;
-    private bool isFight = false;
+    private bool haveSword = false;
 
     private bool isRebirth = false;
+
+    private float attackTime;
 
     private States State
     {
@@ -34,18 +36,22 @@ public class Player : Entity
     {
         direction = Input.GetAxis("Horizontal");
 
-
         if (direction > 0)
             transform.localScale = new Vector2(5, transform.localScale.y);
         else if (direction < 0)
             transform.localScale = new Vector2(-5, transform.localScale.y);
 
-        if (isGrounded) State = States.idle;
+        if (isGrounded && attackTime < Time.time) State = States.idle;
+        if (!isGrounded && attackTime < Time.time) State = States.jump;
 
         if (Input.GetButton("Horizontal"))
-                Walk();
+            Walk();
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
+        if (Input.GetKeyDown(KeyCode.J))
+            AttackTop();
+        if (Input.GetKeyDown(KeyCode.K))
+            AttackBottom();
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
@@ -56,14 +62,21 @@ public class Player : Entity
 
     private void OnCollisionExit2D (Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
-            State = States.jump;
+            if (attackTime < Time.time)
+                State = States.jump;
             isGrounded = false;
         }
     }
 
     private void Walk()
     {
-        if (isGrounded) State = States.walk;
+        if (isGrounded && attackTime < Time.time) 
+        {
+            if (haveSword)
+                State = States.run_sword;
+            else
+                State = States.run;
+        }
         FindObjectOfType<PlayerSounds>().PlayWalkSound();
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
@@ -73,6 +86,18 @@ public class Player : Entity
     {
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         FindObjectOfType<PlayerSounds>().PlayJumpSound();
+    }
+
+    public void AttackTop()
+    {
+        attackTime = Time.time + 1f;
+        State = States.attack_top;
+    }
+
+    public void AttackBottom()
+    {
+        attackTime = Time.time + 0.5f;
+        State = States.attack_bottom;
     }
 
     public override void Take_Damage(int lost_lives)

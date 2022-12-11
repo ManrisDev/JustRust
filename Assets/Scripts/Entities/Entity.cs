@@ -27,6 +27,9 @@ public abstract class Entity : MonoBehaviour
 public enum States
 {
     idle,
-    walk,
-    jump
+    run,
+    run_sword,
+    jump,
+    attack_bottom,
+    attack_top
 }
