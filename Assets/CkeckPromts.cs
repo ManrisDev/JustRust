@@ -14,7 +14,7 @@ public class CkeckPromts : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void End()
+    public void End()
     {
         gameObject.SetActive(false);
     }
