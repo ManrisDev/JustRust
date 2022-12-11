@@ -45,6 +45,12 @@ public class Robot : Entity
             animator.SetBool("attack", false);
     }
 
+    public void MoveToPoint()
+    {
+        animator.SetBool("run", true);
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position + new Vector3(10f, 0, 0), speed * Time.deltaTime);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Player player))
