@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        position.x = player.position.x;
+        position.x = player.position.x + 4.5f;
         position.y = player.position.y + camHeight;
         position.z = -10;
 
