@@ -7,7 +7,6 @@ public class ThirdEnd : MonoBehaviour
 {
     [SerializeField] private Animator interactionTextAnimatorThird;
     [SerializeField] private GameObject trigger;
-    public bool isAlive = true;
 
     private string intObjThird;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,11 +34,6 @@ public class ThirdEnd : MonoBehaviour
                 interactionTextAnimatorThird.SetBool("UseOpen", false);
                 SceneManager.LoadScene("ThirdEnd");
             }
-        }
-
-        if (isAlive == false)
-        {
-            trigger.SetActive(true);
         }
     }
 }
