@@ -13,6 +13,11 @@ public class CkeckPromts : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
+    void End()
+    {
+        gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,5 +45,6 @@ public class CkeckPromts : MonoBehaviour
             }
         if(step_4)
             animator.SetTrigger("next");
+            step_4 = false;
     }
 }
