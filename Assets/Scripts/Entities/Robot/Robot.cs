@@ -10,9 +10,9 @@ public class Robot : Entity
 
     private void Start()
     {
-        lives = 100;
+        lives = 50;
         speed = 2;
-        damage = 10;
+        damage = 20;
     }
 
     private void Update()
@@ -43,6 +43,12 @@ public class Robot : Entity
             animator.SetBool("attack", true);
         else
             animator.SetBool("attack", false);
+    }
+
+    public void MoveToPoint()
+    {
+        animator.SetBool("run", true);
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position + new Vector3(10f, 0, 0), speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
