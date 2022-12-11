@@ -31,4 +31,6 @@ public enum States
     run_sword,
     jump,
     attack_bottom,
+    attack_top,
+    die
 }
