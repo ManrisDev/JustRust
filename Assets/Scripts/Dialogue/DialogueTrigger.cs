@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -10,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Начало диалога");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             Destroy(this.gameObject);
         }
