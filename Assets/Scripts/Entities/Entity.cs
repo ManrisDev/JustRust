@@ -5,7 +5,6 @@ public abstract class Entity : MonoBehaviour
 
     protected int lives = 10; //Lives count
     protected int damage = 5;
-
     protected float speed = 5f;
 
     public virtual void Take_Damage(int lost_lives)

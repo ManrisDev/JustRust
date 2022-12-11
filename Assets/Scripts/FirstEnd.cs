@@ -7,6 +7,8 @@ public class FirstEnd : MonoBehaviour
 {
     [SerializeField] private Animator interactionTextAnimatorFirst;
     [SerializeField] private GameObject trigger;
+    public bool isAlive = true;
+
 
 
     private string intObjFirst;
@@ -35,6 +37,11 @@ public class FirstEnd : MonoBehaviour
                 interactionTextAnimatorFirst.SetBool("UseOpen", false);
                 SceneManager.LoadScene("FirstEnd");
             }
+        }
+
+        if (isAlive == false)
+        {
+            trigger.SetActive(true);
         }
     }
 }
