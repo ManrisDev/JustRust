@@ -11,11 +11,11 @@ public class Player : Entity
 
     private float direction;
     private bool isGrounded;
-    private bool haveSword = true;
+    private bool haveSword = false;
 
     private bool isRebirth = false;
 
-    private float attackTime;
+    private float delay;
 
     private States State
     {
@@ -41,8 +41,8 @@ public class Player : Entity
         else if (direction < 0)
             transform.localScale = new Vector2(-5, transform.localScale.y);
 
-        if (isGrounded && attackTime < Time.time) State = States.idle;
-        if (!isGrounded && attackTime < Time.time) State = States.jump;
+        if (isGrounded && delay < Time.time) State = States.idle;
+        if (!isGrounded && delay < Time.time) State = States.jump;
 
         if (Input.GetButton("Horizontal"))
             Walk();
@@ -50,6 +50,8 @@ public class Player : Entity
             Jump();
         if (Input.GetKeyDown(KeyCode.J))
             AttackBottom();
+        if (Input.GetKeyDown(KeyCode.K))
+            AttackTop();
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
@@ -60,7 +62,7 @@ public class Player : Entity
 
     private void OnCollisionExit2D (Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
-            if (attackTime < Time.time)
+            if (delay < Time.time)
                 State = States.jump;
             isGrounded = false;
         }
@@ -68,7 +70,7 @@ public class Player : Entity
 
     private void Walk()
     {
-        if (isGrounded && attackTime < Time.time) 
+        if (isGrounded && delay < Time.time) 
         {
             if (haveSword)
                 State = States.run_sword;
@@ -88,8 +90,14 @@ public class Player : Entity
 
     public void AttackBottom()
     {
-        attackTime = Time.time + 0.5f;
+        delay = Time.time + 0.5f;
         State = States.attack_bottom;
+    }
+
+    public void AttackTop()
+    {
+        delay = Time.time + 0.5f;
+        State = States.attack_top;
     }
 
     public override void Take_Damage(int lost_lives)
@@ -103,6 +111,8 @@ public class Player : Entity
             {
                 FindObjectOfType<PlayerSounds>().PlayDieSound();
                 if (!isRebirth) {
+                    State = States.die;
+                    delay = Time.time + 6f;
                     FindObjectOfType<GameManager>().RebirthOrDie();
                     lives = GlobalVar.Get_lives();
                     isRebirth = true;
@@ -118,6 +128,7 @@ public class Player : Entity
 
     public override void Die()
     {
+        State = States.die;
         gameObject.SetActive(false);
     }
 }
