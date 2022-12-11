@@ -5,7 +5,6 @@ public class PlayerSounds : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] AudioClip[] walk_sounds;
     [SerializeField] AudioClip[] die_sounds;
-    [SerializeField] AudioClip[] run_sounds;
     [SerializeField] AudioClip[] jump_sounds;
 
     private AudioSource audioSource;
@@ -28,13 +27,6 @@ public class PlayerSounds : MonoBehaviour
     {
         clip = die_sounds[UnityEngine.Random.Range(0, die_sounds.Length)];
         audioSource.PlayOneShot(clip);
-    }
-
-    public void PlayRunSound()
-    {
-        clip = run_sounds[UnityEngine.Random.Range(0, run_sounds.Length)];
-        if (!audioSource.isPlaying)
-            audioSource.PlayOneShot(clip);
     }
 
     public void PlayJumpSound()
