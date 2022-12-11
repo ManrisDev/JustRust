@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
     private bool pause = false;
     private bool dialog = false;
 
+    [SerializeField] private Animator professorAnimator;
+
     private States State
     {
         get { return (States)playerAnimator.GetInteger("state"); }
@@ -87,7 +89,7 @@ public class DialogueManager : MonoBehaviour
         movement.enabled = true;
         dialog = false;
         dialogueAnimator.SetBool("IsOpen", false);
-
+        professorAnimator.SetTrigger("run");
     }
 
     public void Update()
