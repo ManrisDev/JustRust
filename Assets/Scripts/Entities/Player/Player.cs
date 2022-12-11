@@ -68,6 +68,11 @@ public class Player : Entity
         }
     }
 
+    public void PickUpSword()
+    {
+        haveSword = true;
+    }
+
     private void Walk()
     {
         if (isGrounded && delay < Time.time) 
