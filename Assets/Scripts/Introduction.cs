@@ -9,7 +9,7 @@ public class Introduction : MonoBehaviour
     [SerializeField] GameObject firstTrigger;
 
     [SerializeField] TMP_Text introductionText;
-    [SerializeField] float delay;
+    [SerializeField] float textSpeed;
     
     private string text;
 
@@ -25,7 +25,7 @@ public class Introduction : MonoBehaviour
         foreach(char abc in text)
         {
             introductionText.text += abc;
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 

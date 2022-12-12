@@ -12610,8 +12610,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19915e34d7ea2741a0b809d31ad4aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextGameObject: {fileID: 1972973232}
-  loadText: 0.02
+  player: {fileID: 227485155}
+  introductionPanel: {fileID: 1265937495}
+  firstTrigger: {fileID: 43302172}
+  introductionText: {fileID: 1972973232}
+  textSpeed: 0.02
 --- !u!114 &1265937499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25259,7 +25262,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -27173,10 +27176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diePanel: {fileID: 1769533198}
   rebornPanel: {fileID: 1388196040}
-  introductionPanel: {fileID: 1265937495}
-  firstTrigger: {fileID: 43302172}
-  dialogueAnimator: {fileID: 0}
-  player: {fileID: 227485150}
   movement: {fileID: 227485155}
 --- !u!1 &1972973229
 GameObject:
