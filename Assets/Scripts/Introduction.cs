@@ -4,28 +4,35 @@ using TMPro;
 
 public class Introduction : MonoBehaviour
 {
-    public TMP_Text TextGameObject;
+    [SerializeField] Player player;
+    [SerializeField] GameObject introductionPanel;
+    [SerializeField] GameObject firstTrigger;
+
+    [SerializeField] TMP_Text introductionText;
+    [SerializeField] float delay;
+    
     private string text;
-    [SerializeField] private float loadText;
 
     private void Start()
     {
-        text = TextGameObject.text;
-        TextGameObject.text = "";
-        StartCoroutine(TextCoroutine());
+        text = introductionText.text;
+        introductionText.text = "";
+        StartCoroutine(WriteText());
     }
 
-    IEnumerator TextCoroutine()
+    IEnumerator WriteText()
     {
         foreach(char abc in text)
         {
-            TextGameObject.text += abc;
-            yield return new WaitForSeconds(loadText);
+            introductionText.text += abc;
+            yield return new WaitForSeconds(delay);
         }
     }
 
-    public void EndInt()
+    public void EndIntroduction()
     { 
-        FindObjectOfType<GameManager>().EndIntroduction();
+        player.enabled = true;
+        introductionPanel.SetActive(false);
+        firstTrigger.SetActive(true);
     }
 }
