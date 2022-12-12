@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Sword
-  - Robot
   layers:
   - Default
   - TransparentFX
