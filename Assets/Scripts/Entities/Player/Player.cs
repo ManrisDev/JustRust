@@ -25,7 +25,7 @@ public class Player : Entity
 
     private void Start()
     {
-        lives = 100;
+        lives = 250;
         speed = speed_;
         damage = 25;
         rigidbody = GetComponent<Rigidbody2D>();
