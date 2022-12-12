@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Robot : Entity
+public class Boss : Entity
 {
     [SerializeField] GameObject player;
     [SerializeField] float distanceBetween;
@@ -10,9 +10,9 @@ public class Robot : Entity
 
     private void Start()
     {
-        lives = 100;
+        lives = 300;
         speed = 2;
-        damage = 10;
+        damage = 25;
     }
 
     private void Update()
